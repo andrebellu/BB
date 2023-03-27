@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+    phpmyadmin:
+        image: phpmyadmin
+        ports:
+            - 8080:80
+        environment:
+            - PMA_ARBITRARY=1
+
+    mariadb:
+        image: mariadb
+        environment:
+            - MARIADB_ROOT_PASSWORD=pippo
+        ports:
+            - 3306:3306
+
+    php-apache-environment:
+        container_name: php-apache
+        build: .
+        ports:
+            - 8000:80
+        volumes:
+            - ./php/src:/var/www/html/
+        depends_on:
+            - phpmyadmin
+            - mariadb
