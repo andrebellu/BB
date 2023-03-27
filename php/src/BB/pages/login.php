@@ -1,3 +1,12 @@
+<?php
+if ($_COOKIE['admin'] == true) {
+    header("Location: ../php/admin.php");
+} elseif ($_COOKIE['id'] != null) {
+    header("Location: ../php/protected.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
@@ -63,17 +72,18 @@
                         <div>
                             <label for="email-address" class="sr-only">Username</label>
                             <input id="username" name="username" type="username" autocomplete="username" required class="relative block w-full appearance-none rounded-none 
-						rounded-t-md border border-neutral px-3 py-2 text-black
-						placeholder focus:z-10 focus:outline-none 
-						focus:ring-secondary bg-transparent" placeholder="Username" oninput="check_empty()" />
+                        rounded-t-md border border-neutral px-3 py-2 text-black
+                        placeholder focus:z-10 focus:outline-none 
+                        focus:ring-secondary bg-transparent" placeholder="Username" oninput="check_empty()" />
                         </div>
                         <div class="flex flex-row">
                             <label for="password" class="sr-only">Password</label>
                             <input id="password" name="password" type="password" autocomplete="current-password"
                                 required class="relative block w-full appearance-none rounded-none 
-						rounded-b-md border border-neutral px-3 py-2 text-black
-						placeholder focus:z-10 focus:outline-none 
-						focus:ring-secondary sm:text-sm bg-transparent" placeholder="Password" oninput="check_empty()" />
+                        rounded-b-md border border-neutral px-3 py-2 text-black
+                        placeholder focus:z-10 focus:outline-none 
+                        focus:ring-secondary sm:text-sm bg-transparent" placeholder="Password"
+                                oninput="check_empty()" />
                         </div>
                     </div>
 
@@ -92,7 +102,7 @@
 
         <div class="image w-1/2">
             <img src="https://images.unsplash.com/photo-1618351785053-420dc39a3f54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
-                alt="login image" class="cover w-full h-full" />
+                alt="login image" class="cover w-full h-full object-cover" />
         </div>
 
     </div>

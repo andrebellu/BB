@@ -1,3 +1,11 @@
+<?php
+// check if cookie is set or if it is empty
+if (!isset($_COOKIE['id']) || empty($_COOKIE['id'])) {
+    header("Location: ../pages/login.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,11 +52,12 @@
             <div class="tabs">
                 <a class="tab tab-bordered title text-xl" href="./pages/about.html">About</a>
                 <a class="tab tab-bordered title text-xl" href="./php/book.php">Book</a>
-                <a class="tab tab-bordered title text-xl" href="../pages/login.html">Profile</a>
+                <a class="tab tab-bordered title text-xl" href="../pages/login.php">Profile</a>
             </div>
         </div>
     </div>
 
+    <h1 class="text-2xl">Le tue prenotazioni</h1>
     <div class="bookings flex">
         <?php
         $id = $_COOKIE['id'];
@@ -71,10 +80,17 @@
         $result = mysqli_query($conn, $q);
 
         if ($result->num_rows > 0) {
-            echo "<h1>Le tue prenotazioni</h1>";
-            echo "<table><tr><th>Cliente</th><th>Camera</th><th>Check-in</th><th>Check-out</th></tr>";
+            echo "<table class='min-w-full divide-y divide-gray-200'><thead class='bg-gray-50'><tr>";
+            echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Cliente</th>";
+            echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Camera</th>";
+            echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Check-in</th>";
+            echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Check-out</th>";
+            echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Delete</th>";
+            echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Modify</th>";
+            echo "</tr></thead>";
+
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["Cliente"] . "</td><td>" . $row["Camera"] . "</td><td>" . $row["DataArrivo"] . "</td><td>" . $row["DataPartenza"] . "</td><td>";
+                echo "<tr class='border-b'><td class='px-6 py-3'>" . $row["Cliente"] . "</td><td class='px-6 py-3'>" . $row["Camera"] . "</td><td class='px-6 py-3'>" . $row["DataArrivo"] . "</td><td class='px-6 py-3'>" . $row["DataPartenza"] . "</td><td class='px-6 py-3'><a href='delete.php?id=" . $row["id"] . "'>Delete</a></td><td class='px-6 py-3'><a href='edituserbook.php?id=" . $row["id"] . "'>Modify</a></td></tr>";
             }
             echo "</table>";
         } else {
@@ -86,6 +102,7 @@
     </div>
 
     <a class="btn btn-primary title text-xl" href="../pages/book.php">Book</a>
+    <a class="btn btn-primary title text-xl" href="../php/logout.php">Logout</a>
 
 </body>
 

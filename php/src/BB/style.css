@@ -104,11 +104,9 @@ section {
   height: 100%;
 
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(253, 253, 253, 0.5) 0%,
-    rgb(255, 255, 255) 95%
-  );
+  background: linear-gradient(180deg,
+      rgba(253, 253, 253, 0.5) 0%,
+      rgb(255, 255, 255) 95%);
 }
 
 .page-1-content {

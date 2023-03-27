@@ -26,14 +26,14 @@ if ($res->num_rows > 0) {
             if ($row['Admin'] == true) {
                 header("Location: ./admin.php");
             } else {
-                header("Location: protected.php");
+                header("Location: ./protected.php");
             }
         } else {
-            header("Location: ../pages/login.html");
+            header("Location: ../pages/login.php");
         }
     }
 } else {
-    header("Location: ../pages/login.html");
+    header("Location: ../pages/login.php");
 }
 
 ?>

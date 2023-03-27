@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>Bed & Breakfast</title>
+    <title>Swan b&b</title>
 
     <link rel="stylesheet" href="./style.css">
 
@@ -53,7 +53,7 @@
                     <div class="tabs">
                         <a class="tab tab-bordered title text-xl" href="./pages/about.html">About</a>
                         <a class="tab tab-bordered title text-xl" href="./php/book.php">Book</a>
-                        <a class="tab tab-bordered title text-xl" href="./pages/login.html">Profile</a>
+                        <a class="tab tab-bordered title text-xl" href="./pages/login.php">Profile</a>
                     </div>
                 </div>
             </div>

@@ -43,7 +43,7 @@
             <div class="tabs">
                 <a class="tab tab-bordered title text-xl" href="./pages/about.html">About</a>
                 <a class="tab tab-bordered title text-xl" href="./php/book.php">Book</a>
-                <a class="tab tab-bordered title text-xl" href="../pages/login.html">Profile</a>
+                <a class="tab tab-bordered title text-xl" href="../pages/login.php">Profile</a>
             </div>
         </div>
     </div>
@@ -131,8 +131,11 @@
 
             $res = mysqli_fetch_assoc($res)['id'];
 
-            $qstay = "INSERT INTO Soggiorni (Prenotazione, Cliente, Documento) VALUES ($res, $iduser, '$document')";
-            if ($result) {
+            $qstay = "INSERT INTO Soggiorni (Prenotazione, Cliente, Document) VALUES ($res, $iduser, '$document')";
+
+            $resultstay = mysqli_query($conn, $qstay);
+
+            if ($result && $resultstay) {
                 echo "<p>Booking successful</p>";
             } else {
                 echo "<p>Booking failed</p>";

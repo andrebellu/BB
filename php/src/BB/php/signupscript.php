@@ -19,7 +19,7 @@ $q = "INSERT INTO Clienti (Username, Nome, Cognome, Email, Telefono, Password) V
 if (isset($_POST['username']) && isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['password'])) {
     $result = mysqli_query($conn, $q);
     if ($result) {
-        header("Location: ../pages/login.html");
+        header("Location: ../pages/login.php");
     } else {
         echo "
 <script>alert('Username already exists!')</script>";

@@ -41,9 +41,9 @@
                     class="text-sm leading-none">Admin
                     Dashboard</span></a>
         </div>
-        <div class="nav-links">
-            <p>Welcome, Admin</p>
-        </div>
+        <a class="btn btn-ghost text-md title hover:text-slate-500 transition-all duration-300 font-sans"
+            href="/BB/php/logout.php">Logout</a>
+    </div>
     </div>
 
     <div class="bookings flex">
