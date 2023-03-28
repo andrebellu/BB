@@ -50,15 +50,17 @@ if (!isset($_COOKIE['id']) || empty($_COOKIE['id'])) {
         </div>
         <div class="nav-links">
             <div class="tabs">
-                <a class="tab tab-bordered title text-xl" href="./pages/about.html">About</a>
-                <a class="tab tab-bordered title text-xl" href="./php/book.php">Book</a>
+                <a class="tab tab-bordered title text-xl" href="../pages/about.html">About</a>
+
                 <a class="tab tab-bordered title text-xl" href="../pages/login.php">Profile</a>
             </div>
         </div>
     </div>
 
-    <h1 class="text-2xl">Le tue prenotazioni</h1>
-    <div class="bookings flex">
+    <div class="bookings flex p-10 flex-col">
+
+        <h1 class="text-2xl">Le tue prenotazioni</h1>
+
         <?php
         $id = $_COOKIE['id'];
 
@@ -77,32 +79,42 @@ if (!isset($_COOKIE['id']) || empty($_COOKIE['id'])) {
 
         $q = "SELECT * FROM Prenotazioni WHERE Cliente = $id";
 
-        $result = mysqli_query($conn, $q);
+        $stay =
+
+            $result = mysqli_query($conn, $q);
 
         if ($result->num_rows > 0) {
             echo "<table class='min-w-full divide-y divide-gray-200'><thead class='bg-gray-50'><tr>";
-            echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Cliente</th>";
+            echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Confirmed?</th>";
             echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Camera</th>";
             echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Check-in</th>";
             echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Check-out</th>";
+            echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Confirm Booking</th>";
             echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Delete</th>";
             echo "<th class='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>Modify</th>";
             echo "</tr></thead>";
 
             while ($row = $result->fetch_assoc()) {
-                echo "<tr class='border-b'><td class='px-6 py-3'>" . $row["Cliente"] . "</td><td class='px-6 py-3'>" . $row["Camera"] . "</td><td class='px-6 py-3'>" . $row["DataArrivo"] . "</td><td class='px-6 py-3'>" . $row["DataPartenza"] . "</td><td class='px-6 py-3'><a href='delete.php?id=" . $row["id"] . "'>Delete</a></td><td class='px-6 py-3'><a href='edituserbook.php?id=" . $row["id"] . "'>Modify</a></td></tr>";
+                $q = "SELECT * FROM Soggiorni WHERE Prenotazione = " . $row["id"];
+                $result2 = mysqli_query($conn, $q);
+
+                if ($result2->num_rows > 0) {
+                    echo "<tr class='border-b'><td class='px-6 py-3'>✔</td>";
+                } else {
+                    echo "<tr class='border-b'><td class='px-6 py-3'>❌</td>";
+                }
+
+                echo "<td class='px-6 py-3'>" . $row["Camera"] . "</td><td class='px-6 py-3'>" . $row["DataArrivo"] . "</td><td class='px-6 py-3'>" . $row["DataPartenza"] . "</td><td class='px-6 py-3'><a href='confirm.php?id=" . $row["id"] . "'>Confirm</a></td><td class='px-6 py-3'><a href='delete.php?id=" . $row["id"] . "'>Delete</a></td><td class='px-6 py-3'><a href='edituserbook.php?id=" . $row["id"] . "'>Modify</a></td></tr>";
             }
             echo "</table>";
         } else {
             echo "0 results";
         }
-
-
         ?>
     </div>
 
-    <a class="btn btn-primary title text-xl" href="../pages/book.php">Book</a>
-    <a class="btn btn-primary title text-xl" href="../php/logout.php">Logout</a>
+    <a class="btn text-xl" href="../pages/book.php">Book</a>
+    <a class="btn text-xl" href="../php/logout.php">Logout</a>
 
 </body>
 

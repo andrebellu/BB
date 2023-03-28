@@ -52,7 +52,7 @@
                 <div class="nav-links">
                     <div class="tabs">
                         <a class="tab tab-bordered title text-xl" href="./pages/about.html">About</a>
-                        <a class="tab tab-bordered title text-xl" href="./php/book.php">Book</a>
+
                         <a class="tab tab-bordered title text-xl" href="./pages/login.php">Profile</a>
                     </div>
                 </div>

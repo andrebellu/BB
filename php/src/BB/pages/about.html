@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<style>
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    body {
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+
+<body>
+
+    <div class="navbar flex justify-between title text-black z-20">
+        <div class="px-4">
+            <a class="text-2xl title hover:text-slate-500 transition-all duration-300" href="/BB">Swan B&B</a>
+        </div>
+        <div class="nav-links">
+            <div class="tabs">
+                <a class="tab tab-bordered title text-xl" href="./pages/about.html">About</a>
+                <a class="tab tab-bordered title text-xl" href="../pages/login.php">Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="center w-full flex justify-center items-center p-10">
+        <div class="carousel h-80 w-96">
+            <div id="slide1" class="carousel-item relative w-full">
+                <img src="https://source.unsplash.com/random/?room" class="w-full object-cover" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" class="btn btn-circle">&#8592;</a>
+                    <a href="#slide2" class="btn btn-circle">&#8594;</a>
+                </div>
+            </div>
+            <div id="slide2" class="carousel-item relative w-full">
+                <img src="https://source.unsplash.com/random/?swan" class="w-full object-cover" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" class="btn btn-circle">&#8592;</a>
+                    <a href="#slide3" class="btn btn-circle">&#8594;</a>
+                </div>
+            </div>
+            <div id="slide3" class="carousel-item relative w-full">
+                <img src="https://source.unsplash.com/random/?home" class="w-full object-cover" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" class="btn btn-circle">&#8592;</a>
+                    <a href="#slide4" class="btn btn-circle">&#8594;</a>
+                </div>
+            </div>
+            <div id="slide4" class="carousel-item relative w-full">
+                <img src="https://source.unsplash.com/random/?sofa" class="w-full object-cover" />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" class="btn btn-circle">&#8592;</a>
+                    <a href="#slide1" class="btn btn-circle">&#8594;</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <h1 class="text-3xl text-black text-center font-semibold">About us</h1>
+    <div class="px-48 pb-10 text-center flex flex-col justify-center items-center">
+        <p class="text-black p-4">Swan B&B is a charming bed and breakfast located in a scenic countryside that offers
+            comfortable and
+            tastefully decorated rooms for solo travelers, couples, friends or colleagues traveling together. The B&B
+            provides a range of amenities, including free Wi-Fi, air conditioning, and a complimentary breakfast every
+            morning. It is the perfect getaway for those seeking peace and relaxation away from the hustle and bustle of
+            the city.</p>
+
+        <div class="icons flex gap-4 mt-2">
+            <img src="https://cdn-icons-png.flaticon.com/512/748/748151.png"
+                class="bg-slate-200 p-4 rounded-full w-12" />
+            <img src="https://cdn-icons-png.flaticon.com/512/5557/5557928.png"
+                class="bg-slate-200 p-4 rounded-full w-12" />
+            <img src="https://cdn-icons-png.flaticon.com/512/706/706401.png"
+                class="bg-slate-200 p-4 rounded-full w-12" />
+            <img src="https://cdn-icons-png.flaticon.com/512/818/818217.png"
+                class="bg-slate-200 p-4 rounded-full w-12" />
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

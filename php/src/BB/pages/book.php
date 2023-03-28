@@ -42,7 +42,7 @@
         <div class="nav-links">
             <div class="tabs">
                 <a class="tab tab-bordered title text-xl" href="./pages/about.html">About</a>
-                <a class="tab tab-bordered title text-xl" href="./php/book.php">Book</a>
+
                 <a class="tab tab-bordered title text-xl" href="../pages/login.php">Profile</a>
             </div>
         </div>
@@ -125,17 +125,7 @@
 
             $result = mysqli_query($conn, $q);
 
-            $q = "SELECT MAX(id) AS id FROM Prenotazioni";
-
-            $res = mysqli_query($conn, $q);
-
-            $res = mysqli_fetch_assoc($res)['id'];
-
-            $qstay = "INSERT INTO Soggiorni (Prenotazione, Cliente, Document) VALUES ($res, $iduser, '$document')";
-
-            $resultstay = mysqli_query($conn, $qstay);
-
-            if ($result && $resultstay) {
+            if ($result) {
                 echo "<p>Booking successful</p>";
             } else {
                 echo "<p>Booking failed</p>";
