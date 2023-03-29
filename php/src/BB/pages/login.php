@@ -1,8 +1,8 @@
 <?php
 if ($_COOKIE['admin'] == true) {
-    header("Location: ../php/admin.php");
+    header("Location: ./auth/adminpage.php");
 } elseif ($_COOKIE['id'] != null) {
-    header("Location: ../php/protected.php");
+    header("Location: ./auth/userpage.php");
 }
 ?>
 
@@ -60,7 +60,7 @@ if ($_COOKIE['admin'] == true) {
 
     <div class="logincontainer flex w-full h-full">
         <form class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 w-1/2" method="post"
-            action="../php/loginscript.php">
+            action="../scripts/login.php">
             <div class=" w-full max-w-md space-y-8">
                 <div>
                     <h1 class="text-left text-4xl">Welcome back!</h1>
@@ -94,7 +94,7 @@ if ($_COOKIE['admin'] == true) {
                         </button>
 
                         <p class="text-center p-4 text-sm text-slate-500">Don't have an account? <a
-                                class="underline text-slate-600" href="./signup.html">SignUp!</a></p>
+                                class="underline text-slate-600 font-semibold" href="./signup.html">SignUp!</a></p>
                     </div>
                 </div>
             </div>

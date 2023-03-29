@@ -78,9 +78,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $q = "UPDATE Prenotazioni SET Cliente = $cliente, Camera = $camera, DataArrivo = '$checkin', DataPartenza = '$checkout' WHERE id = $prenotazione";
 
     if (mysqli_query($conn, $q)) {
-        echo "<script>alert('Prenotazione modificata con successo!'); window.location.href = './protected.php';</script>";
+        echo "<script>alert('Prenotazione modificata con successo!'); window.location.href = './userpage.php';</script>";
     } else {
-        echo "<script>alert('Errore durante la modifica della prenotazione!'); window.location.href = './protected.php';</script>";
+        echo "<script>alert('Errore durante la modifica della prenotazione!'); window.location.href = './userpage.php';</script>";
     }
 
     mysqli_close($conn);

@@ -75,9 +75,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $result = mysqli_query($conn, $update);
 
   if ($_COOKIE['admin'] == true) {
-    header("Location: ./admin.php");
+    echo '<script>window.location.href = "../pages/auth/adminpage.php";</script>';
   } else {
-    header("Location: ./protected.php");
+    echo '<script>window.location.href = "../pages/auth/userpage.php";</script>';
   }
 }
 

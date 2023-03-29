@@ -12,13 +12,13 @@ if ($conn->connect_errno) {
 }
 ;
 
-$q = "UPDATE Prenotazioni SET Disdetta = NOT Disdetta WHERE id = $id";
+$q = "DELETE FROM Soggiorni WHERE Prenotazione = $id";
 
 $result = mysqli_query($conn, $q);
 
 if ($_COOKIE['admin'] == 1) {
-    header("Location: ./admin.php");
+    header("Location: ../pages/auth/adminpage.php");
 } else {
-    header("Location: ./protected.php");
+    header("Location: ../pages/auth/userpage.php");
 }
 ?>

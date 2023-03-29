@@ -12,13 +12,13 @@ if ($conn->connect_errno) {
 }
 ;
 
-$q = "DELETE FROM Soggiorni WHERE Prenotazione = $id";
+$q = "DELETE FROM Prenotazioni WHERE id = $id";
 
 $result = mysqli_query($conn, $q);
 
 if ($_COOKIE['admin'] == 1) {
-    header("Location: ./admin.php");
+    header("Location: ../pages/auth/adminpage.php");
 } else {
-    header("Location: ./protected.php");
+    header("Location: ../pages/auth/userpage.php");
 }
 ?>

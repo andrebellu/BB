@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 
 </head>
 
@@ -27,24 +27,22 @@
         height: 100%;
         background-color: white;
     }
-
-    .title {
-        font-family: 'Philosopher', sans-serif;
-    }
 </style>
 
 <body>
 
-    <div class="navbar flex justify-between title text-black bg-gray-200 rounded-b-xl drop-shadow mb-10">
+    <div class="navbar flex justify-between title text-black z-20 bg-gray-300 rounded-b-md mb-8">
         <div class="px-4">
-            <a class="text-2xl title hover:text-slate-500 transition-all duration-300" href="/BB">Swan B&B <br /> <span
-                    class="text-sm leading-none">Admin
-                    Dashboard</span></a>
+            <a class="text-2xl title hover:text-slate-500 transition-all duration-300" href="/BB">Swan B&B</a>
         </div>
-        <a class="btn btn-ghost text-md title hover:text-slate-500 transition-all duration-300 font-sans"
-            href="/BB/php/logout.php">Logout</a>
+        <div class="nav-links">
+            <div class="tabs">
+                <a class="btn btn-outline" href="/BB/scripts/logout.php">Logout</a>
+            </div>
+        </div>
     </div>
-    </div>
+
+
 
     <div class="bookings flex">
 
@@ -155,7 +153,7 @@
         $result = mysqli_query($conn, $q);
 
         if ($result->num_rows > 0) {
-            echo '<div class="px-4">';
+            echo '<div class="px-4 pb-16">';
             echo "<h1 Le class='text-3xl p-4 pt-8'>User's Bookings</h1>";
             echo '<table class="min-w-full divide-y divide-gray-200">
         <thead>
@@ -192,7 +190,7 @@
                 </th>
                 <th
                     class="px-6 py-3 bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                    <div class="flex cursor-pointer">
+                    <div class="flex cursor-pointer justify-center">
                         <span class="mr-2">Disdetta</span>
                     </div>
                 </th>
@@ -224,14 +222,14 @@
                     <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5">';
 
                 if ($row["Disdetta"] == false) {
-                    echo "<p class='text-red-500'>No</p>";
+                    echo "<p class='text-red-500 text-center'>No</p>";
                 } else {
-                    echo "<p class='text-green-500'>Si</p>";
+                    echo "<p class='text-green-500 text-center'>Si</p>";
                 }
                 ;
                 echo '</p>' . '</td>' . '<td class="px-6 py-4">
             <div class="flex justify-start">
-            <a href="disdetta.php?id=' . $row["id"] . ' "class="text-blue-500 hover:text-blue-600 pr-4">
+            <a href="../../scripts/disdetta.php?id=' . $row["id"] . ' "class="text-blue-500 hover:text-blue-600 pr-4">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -239,7 +237,7 @@
         </svg>
         <p>Cancel</p>
     </a>
-    <a href="delete.php?id=' . $row["id"] . ' "class="text-red-500 hover:text-red-600">
+    <a href="../../scripts/delete.php?id=' . $row["id"] . ' "class="text-red-500 hover:text-red-600">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 ml-3" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -307,7 +305,7 @@
             <p>' . $row["Document"] . '</p>'
                 . '</td>
             <td class="flex justify-start">
-            <a href="edit.php?id=' . $row["Prenotazione"] . ' "class="text-blue-500 hover:text-blue-600 pr-4">
+            <a href="../../scripts/edit.php?id=' . $row["Prenotazione"] . ' "class="text-blue-500 hover:text-blue-600 pr-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -315,7 +313,7 @@
                 </svg>
                 <p class="text-center">Edit</p>
             </a>
-            <a href="deletesog.php?id=' . $row["Prenotazione"] . ' "class="text-red-500 hover:text-red-600">
+            <a href="../../scripts/deletesog.php?id=' . $row["Prenotazione"] . ' "class="text-red-500 hover:text-red-600">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1 ml-3" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

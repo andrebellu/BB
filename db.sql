@@ -87,7 +87,7 @@ INSERT INTO Clienti(Cognome, Nome, Indirizzo, Telefono, Email, Username, Passwor
 
 INSERT INTO Clienti(Cognome, Nome, Indirizzo, Telefono, Email, Username, Password) VALUES ('Rossi', 'Mario', 'Via del Mare 77', '6767676767', 'rossi@mario.com', 'rossim', '007');
 
-INSERT INTO Camere(Numero, Descrizione, Posti, Costo) VALUES (1, 'Ciclamini', 3, 150), (2, 'Rose', 2, 100), (3, 'Girasoli', 4, 200), (4, 'Peonie', 2, 100), (5, 'Gardenie', 5, 250), (6, 'Tulipani', 3, 150);
+INSERT INTO Camere(Numero, Descrizione, Posti, Costo) VALUES (1, 'Ciclamini', 3, 150), (2, 'Rose', 2, 100), (3, 'Girasoli', 4, 200), (4, 'Peonie', 2, 100), (5, 'Gardenie', 5, 250), (6, 'Tulipani', 3, 150), (7, 'Gelsomini', 2, 100), (8, 'Ginestre', 4, 200), (9, 'Glicine', 2, 100));
 
 INSERT INTO Prenotazioni(id, Cliente, Camera, DataArrivo, DataPartenza, Disdetta) VALUES (1, '1', 1, '2021-07-15', '2021-07-31', 0), (2, '2', 2, '2021-07-01', '2021-07-31', 0), (3, '3', 3, '2021-06-25', '2021-07-25', 0), (4, '3', 1, '2021-12-01', '2021-12-31', 0), (5, '4', 2, '2021-12-01', '2021-12-31', 0), (6, '3', 3, '2021-12-01', '2021-12-31', 0), (7, '1', 4, '2021-12-01', '2021-12-31', 0), (8, '2', 5, '2021-12-01', '2021-12-31', 0), (9, '4', 6, '2021-12-01', '2021-12-31', 0);
 

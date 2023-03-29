@@ -34,10 +34,6 @@
     body {
         background-color: rgb(255, 255, 255);
     }
-
-    .title {
-        font-family: 'Philosopher', sans-serif;
-    }
 </style>
 
 <body>
@@ -45,14 +41,13 @@
     <div class="scroll-container">
 
         <section class="page-1">
-            <div class="navbar flex justify-between title text-black absolute z-20">
+            <div class="navbar flex absolute justify-between title text-black z-20 bg-transparent rounded-b-md">
                 <div class="px-4">
-                    <a class="text-2xl title">Swan B&B</a>
+                    <a class="text-2xl title hover:text-slate-500 transition-all duration-300" href="/BB">Swan B&B</a>
                 </div>
                 <div class="nav-links">
                     <div class="tabs">
                         <a class="tab tab-bordered title text-xl" href="./pages/about.html">About</a>
-
                         <a class="tab tab-bordered title text-xl" href="./pages/login.php">Profile</a>
                     </div>
                 </div>
@@ -114,12 +109,12 @@
                     </div>
                     <div class='mt-3 text-center'>
                         <p class='text-gray-600 text-xs'>€ " . $row['Costo'] . ",00</p>
-                    </div>
-                    <div class='mt-3 text-center'>
-                        <button
-                            class='px-4 py-2 bg-gray-800 text-white rounded-lg text-xs font-semibold'>Book</button>
-                    </div>
-                </div>
+                    </div>";
+                /* <div class='mt-3 text-center'>
+                <button
+                class='px-4 py-2 bg-gray-800 text-white rounded-lg text-xs font-semibold'>Book</button>
+                </div> */
+                echo "</div>
             </div>";
             }
         }

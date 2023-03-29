@@ -26,7 +26,7 @@ if (!isset($_COOKIE['id']) || empty($_COOKIE['id'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 
 </head>
 
@@ -36,23 +36,19 @@ if (!isset($_COOKIE['id']) || empty($_COOKIE['id'])) {
         height: 100%;
         background-color: white;
     }
-
-    .title {
-        font-family: 'Philosopher', sans-serif;
-    }
 </style>
 
 <body>
 
-    <div class="navbar flex justify-between title text-black z-20">
+    <div class="navbar flex justify-between title text-black z-20 bg-gray-300 rounded-b-md">
         <div class="px-4">
             <a class="text-2xl title hover:text-slate-500 transition-all duration-300" href="/BB">Swan B&B</a>
         </div>
         <div class="nav-links">
             <div class="tabs">
-                <a class="tab tab-bordered title text-xl" href="../pages/about.html">About</a>
+                <a class="tab tab-bordered title text-xl" href="../about.html">About</a>
 
-                <a class="tab tab-bordered title text-xl" href="../pages/login.php">Profile</a>
+                <a class="tab tab-bordered title text-xl" href="../login.php">Profile</a>
             </div>
         </div>
     </div>
@@ -60,8 +56,8 @@ if (!isset($_COOKIE['id']) || empty($_COOKIE['id'])) {
     <div class="bookings flex p-10 flex-col">
 
         <div class="btns pb-4">
-            <a class="btn text-xl" href="../pages/book.php">Book</a>
-            <a class="btn text-xl" href="../php/logout.php">Logout</a>
+            <a class="btn text-xl" href="../book.php">Book</a>
+            <a class="btn text-xl" href="../../scripts/logout.php">Logout</a>
         </div>
 
         <h1 class="text-2xl pb-2">Le tue prenotazioni</h1>

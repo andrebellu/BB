@@ -28,28 +28,23 @@
         height: 100%;
         background-color: white;
     }
-
-    .title {
-        font-family: 'Philosopher', sans-serif;
-    }
 </style>
 
 <body>
-    <div class="navbar flex justify-between title text-black bg-gray-200 rounded-b-xl drop-shadow">
+    <div class="navbar flex justify-between title text-black z-20 bg-gray-300 rounded-b-md">
         <div class="px-4">
             <a class="text-2xl title hover:text-slate-500 transition-all duration-300" href="/BB">Swan B&B</a>
         </div>
         <div class="nav-links">
             <div class="tabs">
-                <a class="tab tab-bordered title text-xl" href="./pages/about.html">About</a>
-
-                <a class="tab tab-bordered title text-xl" href="../pages/login.php">Profile</a>
+                <a class="tab tab-bordered title text-xl" href="./about.html">About</a>
+                <a class="tab tab-bordered title text-xl" href="./book.php">Profile</a>
             </div>
         </div>
     </div>
 
     <div class="p-4">
-        <h1 class="text-3xl text-black">Book a Room</h1>
+        <h1 class="text-3xl text-black pb-4">Book a Room</h1>
 
         <form action="book.php" method="post" class="flex flex-col">
             <?php

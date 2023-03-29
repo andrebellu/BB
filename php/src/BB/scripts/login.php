@@ -24,9 +24,9 @@ if ($res->num_rows > 0) {
             setcookie('id', $row['Codice'], time() + 3600, '/');
             setcookie('admin', $row['Admin'], time() + 3600, '/');
             if ($row['Admin'] == true) {
-                header("Location: ./admin.php");
+                header("Location: ../pages/auth/adminpage.php");
             } else {
-                header("Location: ./protected.php");
+                header("Location: ../pages/auth/userpage.php");
             }
         } else {
             header("Location: ../pages/login.php");

@@ -69,8 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if ($_COOKIE['admin']) {
-        echo '<script>window.location.href = "./admin.php";</script>';
+        echo '<script>window.location.href = "../pages/auth/adminpage.php";</script>';
     } else {
-        echo '<script>window.location.href = "./protected.php";</script>';
+        echo '<script>window.location.href = "../pages/auth/userpage.php";</script>';
     }
 }
