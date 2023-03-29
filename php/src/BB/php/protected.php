@@ -59,7 +59,12 @@ if (!isset($_COOKIE['id']) || empty($_COOKIE['id'])) {
 
     <div class="bookings flex p-10 flex-col">
 
-        <h1 class="text-2xl">Le tue prenotazioni</h1>
+        <div class="btns pb-4">
+            <a class="btn text-xl" href="../pages/book.php">Book</a>
+            <a class="btn text-xl" href="../php/logout.php">Logout</a>
+        </div>
+
+        <h1 class="text-2xl pb-2">Le tue prenotazioni</h1>
 
         <?php
         $id = $_COOKIE['id'];
@@ -112,9 +117,6 @@ if (!isset($_COOKIE['id']) || empty($_COOKIE['id'])) {
         }
         ?>
     </div>
-
-    <a class="btn text-xl" href="../pages/book.php">Book</a>
-    <a class="btn text-xl" href="../php/logout.php">Logout</a>
 
 </body>
 
